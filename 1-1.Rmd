@@ -1,0 +1,72 @@
+---
+title: "文字列ベクトルの生成(1)"
+author: "kazutan"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+簡単な文字列のベクトルを生成します。
+
+## 問題
+### (1)指定した文字列からベクトル生成 {.tab-content}
+以下の様な文字列ベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab1" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab1a" data-toggle="tab">解答例</a>
+  </li>
+</ul>
+
+#### (1)出力例 {#tab1 .tab-pane .active}
+
+```{r echo=FALSE}
+x <- c("hoge", "ほげ", "ホゲ")
+x
+```
+
+#### (1)解答例 {#tab1a .tab-pane}
+
+```{r}
+x <- c("hoge", "ほげ", "ホゲ")
+x
+```
+
+
+
+### (2)連続した文字ベクトルの生成 {.tab-content}
+以下のような文字が連続したベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab2" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab2a" data-toggle="tab">解答例</a>
+  </li>
+</ul>
+
+#### (2)出力例 {#tab2 .tab-pane .active}
+
+```{r echo=FALSE}
+x <- LETTERS[3:8]
+y <- letters[11:16]
+x
+y
+```
+
+#### (2)解答例 {#tab2a .tab-pane}
+
+```{r}
+x <- LETTERS[3:8]
+y <- letters[11:16]
+x
+y
+```
+
