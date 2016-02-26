@@ -20,18 +20,18 @@ knitr::opts_chunk$set(echo = TRUE)
   <a href="#tab1" data-toggle="tab">出力例</a>
   </li>
   <li role="presentation">
-  <a href="#tab1a" data-toggle="tab">解答例</a>
+  <a href="#tab1a" data-toggle="tab">解答例1</a>
   </li>
 </ul>
 
-#### (1)出力例 {#tab1 .tab-pane .active}
+#### 出力例 {#tab1 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- c("hoge", "ほげ", "ホゲ")
 x
 ```
 
-#### (1)解答例 {#tab1a .tab-pane}
+#### 解答例1 {#tab1a .tab-pane}
 
 ```{r}
 x <- c("hoge", "ほげ", "ホゲ")
@@ -48,11 +48,11 @@ x
   <a href="#tab2" data-toggle="tab">出力例</a>
   </li>
   <li role="presentation">
-  <a href="#tab2a" data-toggle="tab">解答例</a>
+  <a href="#tab2a" data-toggle="tab">解答例1</a>
   </li>
 </ul>
 
-#### (2)出力例 {#tab2 .tab-pane .active}
+#### 出力例 {#tab2 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- LETTERS[3:8]
@@ -61,7 +61,7 @@ x
 y
 ```
 
-#### (2)解答例 {#tab2a .tab-pane}
+#### 解答例1 {#tab2a .tab-pane}
 
 ```{r}
 x <- LETTERS[3:8]
@@ -69,4 +69,36 @@ y <- letters[11:16]
 x
 y
 ```
+
+
+
+### (3)連番の文字列ベクトルの生成 {.tab-content}
+以下の出力例のような、hoge1からhoge12までの連番の文字列ベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab3" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab3a" data-toggle="tab">解答例1</a>
+  </li>
+</ul>
+
+#### 出力例 {#tab3 .tab-pane .active}
+
+```{r echo=FALSE}
+x <- paste0("hoge", 1:12)
+x
+```
+
+#### 解答例1 {#tab3a .tab-pane}
+
+```{r}
+x <- paste0("hoge", 1:12)
+x
+```
+
+`paste0()`は文字列を結合する関数で、セパレータ(挟むもの)が""とありません。第一引数で文字列"hoge"を指定し、第二引数で"1"と数値を指定すれば、"hoge1"という文字列を出力します。
+
+この`paste0()`はベクトルでも受け付けますので、第二引数に`1:12`と指定することで1から12の数値ベクトルとなりますから、第一引数の`hoge`は第二引数の数だけリピートされて結合され、結果として上記のような出力となります。
 
