@@ -63,7 +63,7 @@ img {
 <div id="header">
 <h1 class="title">文字列ベクトルの生成(1)</h1>
 <h4 class="author"><em>kazutan</em></h4>
-<h4 class="date"><em>2016/02/26</em></h4>
+<h4 class="date"><em>2016/03/01</em></h4>
 </div>
 
 
@@ -142,6 +142,49 @@ x</code></pre>
 ##  [8] &quot;hoge8&quot;  &quot;hoge9&quot;  &quot;hoge10&quot; &quot;hoge11&quot; &quot;hoge12&quot;</code></pre>
 <p><code>paste0()</code>は文字列を結合する関数で、セパレータ(挟むもの)が“”とありません。第一引数で文字列“hoge”を指定し、第二引数で“1”と数値を指定すれば、“hoge1”という文字列を出力します。</p>
 <p>この<code>paste0()</code>はベクトルでも受け付けますので、第二引数に<code>1:12</code>と指定することで1から12の数値ベクトルとなりますから、第一引数の<code>hoge</code>は第二引数の数だけリピートされて結合され、結果として上記のような出力となります。</p>
+</div>
+</div>
+<div class="section level3 tab-content">
+<h3>(4)全ての組み合わせの文字列ベクトルの生成</h3>
+<p>以下の2つの文字列ベクトルがあるとします:</p>
+<pre class="r"><code>x &lt;- c(&quot;国語&quot;, &quot;数学&quot;, &quot;英語&quot;)
+y &lt;- c(&quot;中間&quot;, &quot;期末&quot;)</code></pre>
+<p>この2つのベクトル要素全ての組み合わせで、出力例のような文字列ベクトルを生成してください。</p>
+<ul class="nav nav-tabs">
+<li class="active">
+<a href="#tab4" data-toggle="tab">出力例</a>
+</li>
+<li role="presentation">
+<a href="#tab4a" data-toggle="tab">解答例1</a>
+</li>
+</ul>
+<div id="tab4" class="section level4 tab-pane active">
+<h4>出力例</h4>
+<pre><code>## [1] &quot;国語-中間&quot; &quot;数学-中間&quot; &quot;英語-中間&quot; &quot;国語-期末&quot; &quot;数学-期末&quot; &quot;英語-期末&quot;</code></pre>
+</div>
+<div id="tab4a" class="section level4 tab-pane">
+<h4>解答例1</h4>
+<pre class="r"><code>x &lt;- c(&quot;国語&quot;, &quot;数学&quot;, &quot;英語&quot;)
+y &lt;- c(&quot;中間&quot;, &quot;期末&quot;)
+as.vector(outer(x, y, FUN = &quot;paste&quot;, sep=&quot;-&quot;))</code></pre>
+<pre><code>## [1] &quot;国語-中間&quot; &quot;数学-中間&quot; &quot;英語-中間&quot; &quot;国語-期末&quot; &quot;数学-期末&quot; &quot;英語-期末&quot;</code></pre>
+<p>文字列ベクトルの各要素で出力例のような全ての組み合わせを出力したい場合には、<code>outer</code>関数が便利です。</p>
+<p><code>outer</code>関数は行列の外積(演算)を実行します。引数<code>FUN =</code>で演算するための関数を指定します。今回のように文字列ベクトルを与え、引数に<code>FUN = &quot;paste&quot;</code>と指定すると、与えたベクトルの組み合わせ全てに<code>paste</code>を実行します:</p>
+<pre class="r"><code>outer(x, y, FUN = &quot;paste&quot;)</code></pre>
+<pre><code>##      [,1]        [,2]       
+## [1,] &quot;国語 中間&quot; &quot;国語 期末&quot;
+## [2,] &quot;数学 中間&quot; &quot;数学 期末&quot;
+## [3,] &quot;英語 中間&quot; &quot;英語 期末&quot;</code></pre>
+<p>ただし、このままだと2つの要素間に半角スペース(&quot; “)がはいります。今回はハイフン(”-“)にしたいので、以下のようにします:</p>
+<pre class="r"><code>outer(x, y, FUN = &quot;paste&quot;, sep=&quot;-&quot;)</code></pre>
+<pre><code>##      [,1]        [,2]       
+## [1,] &quot;国語-中間&quot; &quot;国語-期末&quot;
+## [2,] &quot;数学-中間&quot; &quot;数学-期末&quot;
+## [3,] &quot;英語-中間&quot; &quot;英語-期末&quot;</code></pre>
+<p>この引数<code>sep =</code>は、outerの引数ではなく、FUNで指定した関数の引数として処理されます。詳しくは<code>?outer</code>で確認してください。</p>
+<p>これで目的の文字列は生成できましたが、<code>outer</code>の出力はmatrix型となります。これをベクトルにするため、全体を<code>as.vector</code>関数で包めばOKです。</p>
+<pre class="r"><code>as.vector(outer(x, y, FUN = &quot;paste&quot;, sep = &quot;-&quot;))</code></pre>
+<pre><code>## [1] &quot;国語-中間&quot; &quot;数学-中間&quot; &quot;英語-中間&quot; &quot;国語-期末&quot; &quot;数学-期末&quot; &quot;英語-期末&quot;</code></pre>
 </div>
 </div>
 </div>
