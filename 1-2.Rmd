@@ -10,8 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 簡単な数値ベクトルを生成します。
 
-## 問題
-### (1)連番の数値ベクトルを生成 {.tab-content}
+## 問題(1) 連番の数値ベクトルを生成 {.tab-content}
 以下のような、10から1の数値ベクトルを生成してください。
 
 <ul class="nav nav-tabs">
@@ -23,14 +22,14 @@ knitr::opts_chunk$set(echo = TRUE)
   </li>
 </ul>
 
-#### 出力例 {#tab1 .tab-pane .active}
+### 出力例 {#tab1 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- 10:3
 x
 ```
 
-#### 解答例1 {#tab1a .tab-pane}
+### 解答例1 {#tab1a .tab-pane}
 
 ```{r}
 x <- 10:3
