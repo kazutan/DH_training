@@ -1,0 +1,42 @@
+---
+title: "数値ベクトルの生成(1)"
+author: "kazutan"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+簡単な数値ベクトルを生成します。
+
+## 問題
+### (1)連番の数値ベクトルを生成 {.tab-content}
+以下のような、10から1の数値ベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab1" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab1a" data-toggle="tab">解答例1</a>
+  </li>
+</ul>
+
+#### 出力例 {#tab1 .tab-pane .active}
+
+```{r echo=FALSE}
+x <- 10:3
+x
+```
+
+#### 解答例1 {#tab1a .tab-pane}
+
+```{r}
+x <- 10:3
+x
+```
+
+数字の連番を生成するには、`1:10`のように`:`で数値をつなげるとできます。またこの連番は、左の数値から右の数値へと1
+ずつ変化させていきます。この挙動については、`?":"`を実行してヘルプを参照してみてください。
