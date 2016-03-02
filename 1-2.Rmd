@@ -1,6 +1,5 @@
 ---
 title: "数値ベクトルの生成(1)"
-author: "kazutan"
 date: "`r format(Sys.time(), '%Y/%m/%d')`"
 output: html_document
 ---
