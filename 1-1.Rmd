@@ -10,8 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 簡単な文字列のベクトルを生成します。
 
-## 問題
-### (1)指定した文字列からベクトル生成 {.tab-content}
+## 問題(1) 指定した文字列からベクトル生成 {.tab-content}
 以下の様な文字列ベクトルを生成してください。
 
 <ul class="nav nav-tabs">
@@ -23,14 +22,14 @@ knitr::opts_chunk$set(echo = TRUE)
   </li>
 </ul>
 
-#### 出力例 {#tab1 .tab-pane .active}
+### 出力例 {#tab1 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- c("hoge", "ほげ", "ホゲ")
 x
 ```
 
-#### 解答例1 {#tab1a .tab-pane}
+### 解答例1 {#tab1a .tab-pane}
 
 ```{r}
 x <- c("hoge", "ほげ", "ホゲ")
@@ -39,7 +38,7 @@ x
 
 
 
-### (2)連続した文字ベクトルの生成 {.tab-content}
+## 問題(2) 連続した文字ベクトルの生成 {.tab-content}
 以下のような文字が連続したベクトルを生成してください。
 
 <ul class="nav nav-tabs">
@@ -51,7 +50,7 @@ x
   </li>
 </ul>
 
-#### 出力例 {#tab2 .tab-pane .active}
+### 出力例 {#tab2 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- LETTERS[3:8]
@@ -60,7 +59,7 @@ x
 y
 ```
 
-#### 解答例1 {#tab2a .tab-pane}
+### 解答例1 {#tab2a .tab-pane}
 
 ```{r}
 x <- LETTERS[3:8]
@@ -71,7 +70,7 @@ y
 
 
 
-### (3)連番の文字列ベクトルの生成 {.tab-content}
+## 問題(3) 連番の文字列ベクトルの生成 {.tab-content}
 以下の出力例のような、hoge1からhoge12までの連番の文字列ベクトルを生成してください。
 
 <ul class="nav nav-tabs">
@@ -83,14 +82,14 @@ y
   </li>
 </ul>
 
-#### 出力例 {#tab3 .tab-pane .active}
+### 出力例 {#tab3 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- paste0("hoge", 1:12)
 x
 ```
 
-#### 解答例1 {#tab3a .tab-pane}
+### 解答例1 {#tab3a .tab-pane}
 
 ```{r}
 x <- paste0("hoge", 1:12)
@@ -101,7 +100,7 @@ x
 
 この`paste0()`はベクトルでも受け付けますので、第二引数に`1:12`と指定することで1から12の数値ベクトルとなりますから、第一引数の`hoge`は第二引数の数だけリピートされて結合され、結果として上記のような出力となります。
 
-### (4)全ての組み合わせの文字列ベクトルの生成 {.tab-content}
+## 問題(4) 全ての組み合わせの文字列ベクトルの生成 {.tab-content}
 以下の2つの文字列ベクトルがあるとします:
 
 ```{r eval=FALSE}
@@ -120,7 +119,7 @@ y <- c("中間", "期末")
   </li>
 </ul>
 
-#### 出力例 {#tab4 .tab-pane .active}
+### 出力例 {#tab4 .tab-pane .active}
 
 ```{r echo=FALSE}
 x <- c("国語", "数学", "英語")
@@ -128,7 +127,7 @@ y <- c("中間", "期末")
 as.vector(outer(x, y, FUN = "paste", sep="-"))
 ```
 
-#### 解答例1 {#tab4a .tab-pane}
+### 解答例1 {#tab4a .tab-pane}
 
 ```{r}
 x <- c("国語", "数学", "英語")
@@ -158,3 +157,65 @@ outer(x, y, FUN = "paste", sep="-")
 as.vector(outer(x, y, FUN = "paste", sep = "-"))
 ```
 
+## 問題(5) 指定した文字で分割してベクトルを生成{.tab-content}
+以下の様な文字列があるとします:
+
+```{r}
+x <- "東京-品川-新横浜-名古屋-京都-新大阪-新神戸-岡山-福山-広島"
+x
+```
+
+これを出力例にあるように、`-`で分割した値を格納した文字列のベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab5" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab5a" data-toggle="tab">解答例1</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab5b" data-toggle="tab">解答例2</a>
+  </li>
+</ul>
+
+### 出力例 {#tab5 .tab-pane .active}
+
+```{r echo=FALSE}
+xx <- unlist(strsplit(x,"-"))
+xx
+```
+
+### 解答例1 {#tab5a .tab-pane}
+
+```{r}
+xx <- unlist(strsplit(x,"-"))
+xx
+```
+
+文字列を分割するには`strsplit`関数が使えます。第一引数に対象となる文字列(or文字列ベクトル)を指定して、第二引数(`split=`)で分割対象の文字(列)を指定します。なお、分割文字列は正規表現で指定することも可能です。
+
+```{r}
+strsplit(x, "-")
+```
+
+この場合、出力はこのようにlist型で返ってきます。もし対象文字列をベクトルで渡している場合、xの各要素ごとにリスト化されます。
+
+```{r}
+strsplit(c("ho-ge", "fu-ga"), "-")
+```
+
+今回は文字列ベクトルで欲しかったので、全体を`unlist`関数でかこんでいます。
+
+### 解答例2 {#tab5b .tab-pane}
+
+```{r}
+# install.package("stringr")
+library(stringr)
+xx <- unlist(str_split(x, "-"))
+xx
+```
+
+文字列操作のためのパッケージである`stringr`にある`str_split`関数を使うと分割分割できます。基本的な使い方は、解答例1の`strsplit`と同様です。
+
+また、この関数にはfactor型への対応や分割回数の指定(`n=`)や返り値の型の指定(`simplify=`)など便利なオプションもあったり、処理が速いというメリットもあります。一度ヘルプ(`?stringr::str_split`)をご確認ください。

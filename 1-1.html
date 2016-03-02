@@ -66,10 +66,8 @@ img {
 
 
 <p>簡単な文字列のベクトルを生成します。</p>
-<div class="section level2">
-<h2>問題</h2>
-<div class="section level3 tab-content">
-<h3>(1)指定した文字列からベクトル生成</h3>
+<div id="1-" class="section level2 tab-content">
+<h2>問題(1) 指定した文字列からベクトル生成</h2>
 <p>以下の様な文字列ベクトルを生成してください。</p>
 <ul class="nav nav-tabs">
 <li class="active">
@@ -79,19 +77,19 @@ img {
 <a href="#tab1a" data-toggle="tab">解答例1</a>
 </li>
 </ul>
-<div id="tab1" class="section level4 tab-pane active">
-<h4>出力例</h4>
+<div id="tab1" class="section level3 tab-pane active">
+<h3>出力例</h3>
 <pre><code>## [1] &quot;hoge&quot; &quot;ほげ&quot; &quot;ホゲ&quot;</code></pre>
 </div>
-<div id="tab1a" class="section level4 tab-pane">
-<h4>解答例1</h4>
+<div id="tab1a" class="section level3 tab-pane">
+<h3>解答例1</h3>
 <pre class="r"><code>x &lt;- c(&quot;hoge&quot;, &quot;ほげ&quot;, &quot;ホゲ&quot;)
 x</code></pre>
 <pre><code>## [1] &quot;hoge&quot; &quot;ほげ&quot; &quot;ホゲ&quot;</code></pre>
 </div>
 </div>
-<div class="section level3 tab-content">
-<h3>(2)連続した文字ベクトルの生成</h3>
+<div id="2-" class="section level2 tab-content">
+<h2>問題(2) 連続した文字ベクトルの生成</h2>
 <p>以下のような文字が連続したベクトルを生成してください。</p>
 <ul class="nav nav-tabs">
 <li class="active">
@@ -101,13 +99,13 @@ x</code></pre>
 <a href="#tab2a" data-toggle="tab">解答例1</a>
 </li>
 </ul>
-<div id="tab2" class="section level4 tab-pane active">
-<h4>出力例</h4>
+<div id="tab2" class="section level3 tab-pane active">
+<h3>出力例</h3>
 <pre><code>## [1] &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot;</code></pre>
 <pre><code>## [1] &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot;</code></pre>
 </div>
-<div id="tab2a" class="section level4 tab-pane">
-<h4>解答例1</h4>
+<div id="tab2a" class="section level3 tab-pane">
+<h3>解答例1</h3>
 <pre class="r"><code>x &lt;- LETTERS[3:8]
 y &lt;- letters[11:16]
 x</code></pre>
@@ -116,8 +114,8 @@ x</code></pre>
 <pre><code>## [1] &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot;</code></pre>
 </div>
 </div>
-<div class="section level3 tab-content">
-<h3>(3)連番の文字列ベクトルの生成</h3>
+<div id="3-" class="section level2 tab-content">
+<h2>問題(3) 連番の文字列ベクトルの生成</h2>
 <p>以下の出力例のような、hoge1からhoge12までの連番の文字列ベクトルを生成してください。</p>
 <ul class="nav nav-tabs">
 <li class="active">
@@ -127,13 +125,13 @@ x</code></pre>
 <a href="#tab3a" data-toggle="tab">解答例1</a>
 </li>
 </ul>
-<div id="tab3" class="section level4 tab-pane active">
-<h4>出力例</h4>
+<div id="tab3" class="section level3 tab-pane active">
+<h3>出力例</h3>
 <pre><code>##  [1] &quot;hoge1&quot;  &quot;hoge2&quot;  &quot;hoge3&quot;  &quot;hoge4&quot;  &quot;hoge5&quot;  &quot;hoge6&quot;  &quot;hoge7&quot; 
 ##  [8] &quot;hoge8&quot;  &quot;hoge9&quot;  &quot;hoge10&quot; &quot;hoge11&quot; &quot;hoge12&quot;</code></pre>
 </div>
-<div id="tab3a" class="section level4 tab-pane">
-<h4>解答例1</h4>
+<div id="tab3a" class="section level3 tab-pane">
+<h3>解答例1</h3>
 <pre class="r"><code>x &lt;- paste0(&quot;hoge&quot;, 1:12)
 x</code></pre>
 <pre><code>##  [1] &quot;hoge1&quot;  &quot;hoge2&quot;  &quot;hoge3&quot;  &quot;hoge4&quot;  &quot;hoge5&quot;  &quot;hoge6&quot;  &quot;hoge7&quot; 
@@ -142,8 +140,8 @@ x</code></pre>
 <p>この<code>paste0()</code>はベクトルでも受け付けますので、第二引数に<code>1:12</code>と指定することで1から12の数値ベクトルとなりますから、第一引数の<code>hoge</code>は第二引数の数だけリピートされて結合され、結果として上記のような出力となります。</p>
 </div>
 </div>
-<div class="section level3 tab-content">
-<h3>(4)全ての組み合わせの文字列ベクトルの生成</h3>
+<div id="4-" class="section level2 tab-content">
+<h2>問題(4) 全ての組み合わせの文字列ベクトルの生成</h2>
 <p>以下の2つの文字列ベクトルがあるとします:</p>
 <pre class="r"><code>x &lt;- c(&quot;国語&quot;, &quot;数学&quot;, &quot;英語&quot;)
 y &lt;- c(&quot;中間&quot;, &quot;期末&quot;)</code></pre>
@@ -156,12 +154,12 @@ y &lt;- c(&quot;中間&quot;, &quot;期末&quot;)</code></pre>
 <a href="#tab4a" data-toggle="tab">解答例1</a>
 </li>
 </ul>
-<div id="tab4" class="section level4 tab-pane active">
-<h4>出力例</h4>
+<div id="tab4" class="section level3 tab-pane active">
+<h3>出力例</h3>
 <pre><code>## [1] &quot;国語-中間&quot; &quot;数学-中間&quot; &quot;英語-中間&quot; &quot;国語-期末&quot; &quot;数学-期末&quot; &quot;英語-期末&quot;</code></pre>
 </div>
-<div id="tab4a" class="section level4 tab-pane">
-<h4>解答例1</h4>
+<div id="tab4a" class="section level3 tab-pane">
+<h3>解答例1</h3>
 <pre class="r"><code>x &lt;- c(&quot;国語&quot;, &quot;数学&quot;, &quot;英語&quot;)
 y &lt;- c(&quot;中間&quot;, &quot;期末&quot;)
 as.vector(outer(x, y, FUN = &quot;paste&quot;, sep=&quot;-&quot;))</code></pre>
@@ -184,6 +182,60 @@ as.vector(outer(x, y, FUN = &quot;paste&quot;, sep=&quot;-&quot;))</code></pre>
 <pre class="r"><code>as.vector(outer(x, y, FUN = &quot;paste&quot;, sep = &quot;-&quot;))</code></pre>
 <pre><code>## [1] &quot;国語-中間&quot; &quot;数学-中間&quot; &quot;英語-中間&quot; &quot;国語-期末&quot; &quot;数学-期末&quot; &quot;英語-期末&quot;</code></pre>
 </div>
+</div>
+<div id="5-" class="section level2 tab-content">
+<h2>問題(5) 指定した文字で分割してベクトルを生成</h2>
+<p>以下の様な文字列があるとします:</p>
+<pre class="r"><code>x &lt;- &quot;東京-品川-新横浜-名古屋-京都-新大阪-新神戸-岡山-福山-広島&quot;
+x</code></pre>
+<pre><code>## [1] &quot;東京-品川-新横浜-名古屋-京都-新大阪-新神戸-岡山-福山-広島&quot;</code></pre>
+<p>これを出力例にあるように、<code>-</code>で分割した値を格納した文字列のベクトルを生成してください。</p>
+<ul class="nav nav-tabs">
+<li class="active">
+<a href="#tab5" data-toggle="tab">出力例</a>
+</li>
+<li role="presentation">
+<a href="#tab5a" data-toggle="tab">解答例1</a>
+</li>
+<li role="presentation">
+<a href="#tab5b" data-toggle="tab">解答例2</a>
+</li>
+</ul>
+<div id="tab5" class="section level3 tab-pane active">
+<h3>出力例</h3>
+<pre><code>##  [1] &quot;東京&quot;   &quot;品川&quot;   &quot;新横浜&quot; &quot;名古屋&quot; &quot;京都&quot;   &quot;新大阪&quot; &quot;新神戸&quot;
+##  [8] &quot;岡山&quot;   &quot;福山&quot;   &quot;広島&quot;</code></pre>
+</div>
+<div id="tab5a" class="section level3 tab-pane">
+<h3>解答例1</h3>
+<pre class="r"><code>xx &lt;- unlist(strsplit(x,&quot;-&quot;))
+xx</code></pre>
+<pre><code>##  [1] &quot;東京&quot;   &quot;品川&quot;   &quot;新横浜&quot; &quot;名古屋&quot; &quot;京都&quot;   &quot;新大阪&quot; &quot;新神戸&quot;
+##  [8] &quot;岡山&quot;   &quot;福山&quot;   &quot;広島&quot;</code></pre>
+<p>文字列を分割するには<code>strsplit</code>関数が使えます。第一引数に対象となる文字列(or文字列ベクトル)を指定して、第二引数(<code>split=</code>)で分割対象の文字(列)を指定します。なお、分割文字列は正規表現で指定することも可能です。</p>
+<pre class="r"><code>strsplit(x, &quot;-&quot;)</code></pre>
+<pre><code>## [[1]]
+##  [1] &quot;東京&quot;   &quot;品川&quot;   &quot;新横浜&quot; &quot;名古屋&quot; &quot;京都&quot;   &quot;新大阪&quot; &quot;新神戸&quot;
+##  [8] &quot;岡山&quot;   &quot;福山&quot;   &quot;広島&quot;</code></pre>
+<p>この場合、出力はこのようにlist型で返ってきます。もし対象文字列をベクトルで渡している場合、xの各要素ごとにリスト化されます。</p>
+<pre class="r"><code>strsplit(c(&quot;ho-ge&quot;, &quot;fu-ga&quot;), &quot;-&quot;)</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;ho&quot; &quot;ge&quot;
+## 
+## [[2]]
+## [1] &quot;fu&quot; &quot;ga&quot;</code></pre>
+<p>今回は文字列ベクトルで欲しかったので、全体を<code>unlist</code>関数でかこんでいます。</p>
+</div>
+<div id="tab5b" class="section level3 tab-pane">
+<h3>解答例2</h3>
+<pre class="r"><code># install.package(&quot;stringr&quot;)
+library(stringr)
+xx &lt;- unlist(str_split(x, &quot;-&quot;))
+xx</code></pre>
+<pre><code>##  [1] &quot;東京&quot;   &quot;品川&quot;   &quot;新横浜&quot; &quot;名古屋&quot; &quot;京都&quot;   &quot;新大阪&quot; &quot;新神戸&quot;
+##  [8] &quot;岡山&quot;   &quot;福山&quot;   &quot;広島&quot;</code></pre>
+<p>文字列操作のためのパッケージである<code>stringr</code>にある<code>str_split</code>関数を使うと分割分割できます。基本的な使い方は、解答例1の<code>strsplit</code>と同様です。</p>
+<p>また、この関数にはfactor型への対応や分割回数の指定(<code>n=</code>)や返り値の型の指定(<code>simplify=</code>)など便利なオプションもあったり、処理が速いというメリットもあります。一度ヘルプ(<code>?stringr::str_split</code>)をご確認ください。</p>
 </div>
 </div>
 
