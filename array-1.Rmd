@@ -1,0 +1,49 @@
+---
+title: "配列の操作"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+配列の操作をします。
+
+## 問題(1) 配列の次元を平均で落としこむ {.tab-content}
+以下の様な次元構成の配列があるとします:
+
+```{r}
+x <- 1:24
+dim(x) <- c(2,3,4)
+x
+```
+
+このとき、第3次元を平均でつぶし、出力例のような2×3の行列にしてください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab1" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab1a" data-toggle="tab">解答例1</a>
+  </li>
+</ul>
+
+### 出力例 {#tab1 .tab-pane .active}
+
+```{r echo=FALSE}
+apply(x, c(1, 2), mean)
+```
+
+### 解答例1 {#tab1a .tab-pane}
+
+```{r}
+apply(x, c(1, 2), mean)
+```
+
+この手の処理はついforループを考えてしまいますが、Rにはapply関数があります。
+
+第一引数(X)に対象となる配列、第二引数(MARGIN)に次元を指定し、第三引数(FUN)に処理させたい関数名を入力します。
+
+MARGINに指定した次元の要素に対してmatch.fan(FUN)を実行しますので、出力としてMARGINに指定した次元の要素が出力として返ってきます。
