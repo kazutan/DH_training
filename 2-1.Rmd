@@ -1,0 +1,73 @@
+---
+title: "ランダムなベクトルの生成"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ランダムなベクトルなどを生成します。
+
+## 問題(1) 一定の範囲の整数からランダムに数値ベクトルを生成1 {.tab-content}
+1から5までの整数からランダムに並べた数値ベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab1" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab1a" data-toggle="tab">解答例1</a>
+  </li>
+</ul>
+
+### 出力例 {#tab1 .tab-pane .active}
+
+```{r echo=FALSE}
+sample(1:5)
+```
+
+### 解答例 {#tab1a .tab-pane}
+
+```{r}
+sample(1:5)
+```
+
+一定の範囲(ベクトル)からランダムにサンプリングするには、`sample`関数が便利です。第一引数(`x=`)に数値範囲(ベクトル)を指定すると、そこからランダムに1つずつ取り出します。
+
+なお、ベクトルではなく一つの値(6や3.8など)を指定すると、その値を超えない値で1から順番に整数を並べたベクトルを返します:
+
+```{r}
+sample(6)
+sample(9.5)
+```
+
+
+## 問題(2) 一定の範囲の整数からランダムに数値ベクトルを生成2 {.tab-content}
+以下のような、1から5までの整数からランダムに20個取得した数値ベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab2" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab2a" data-toggle="tab">解答例1</a>
+  </li>
+</ul>
+
+### 出力例 {#tab2 .tab-pane .active}
+
+```{r echo=FALSE}
+sample(1:5, 20, replace = TRUE)
+```
+
+### 解答例 {#tab2a .tab-pane}
+
+```{r}
+sample(1:5, 20, replace = TRUE)
+```
+
+第一引数(`x=`)にもととなる値(orベクトル)を指定し、第2引数でサンプリングする回数を指定します。`replace=`引数は「持ってくる値を繰り返し使っていいか?」を指定し、`TRUE`なら再利用します。
+
+今回の問題は「1から5の整数」で「20個」とあるので、このようなコードとなります。
