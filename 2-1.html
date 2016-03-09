@@ -127,23 +127,23 @@ $(document).ready(function () {
 </ul>
 <div id="tab1" class="section level3 tab-pane active">
 <h3>出力例</h3>
-<pre><code>## [1] 4 1 2 5 3</code></pre>
+<pre><code>## [1] 2 5 1 3 4</code></pre>
 </div>
 <div id="tab1a" class="section level3 tab-pane">
 <h3>解答例</h3>
 <pre class="r"><code>sample(1:5)</code></pre>
-<pre><code>## [1] 3 1 2 5 4</code></pre>
+<pre><code>## [1] 4 1 2 3 5</code></pre>
 <p>一定の範囲(ベクトル)からランダムにサンプリングするには、<code>sample</code>関数が便利です。第一引数(<code>x=</code>)に数値範囲(ベクトル)を指定すると、そこからランダムに1つずつ取り出します。</p>
 <p>なお、ベクトルではなく一つの値(6や3.8など)を指定すると、その値を超えない値で1から順番に整数を並べたベクトルを返します:</p>
 <pre class="r"><code>sample(6)</code></pre>
-<pre><code>## [1] 6 2 5 4 3 1</code></pre>
+<pre><code>## [1] 4 2 5 6 1 3</code></pre>
 <pre class="r"><code>sample(9.5)</code></pre>
-<pre><code>## [1] 6 4 2 8 7 5 3 9 1</code></pre>
+<pre><code>## [1] 3 8 5 1 7 2 9 6 4</code></pre>
 </div>
 </div>
 <div id="2-2" class="section level2 tab-content">
 <h2>問題(2) 一定の範囲の整数からランダムに数値ベクトルを生成2</h2>
-<p>以下のような、1から5までの整数からランダムに20個取得した数値ベクトルを生成してください。</p>
+<p>1から100までの整数からランダムに10個取得した数値ベクトルを生成してください。</p>
 <ul class="nav nav-tabs">
 <li class="active">
 <a href="#tab2" data-toggle="tab">出力例</a>
@@ -154,12 +154,35 @@ $(document).ready(function () {
 </ul>
 <div id="tab2" class="section level3 tab-pane active">
 <h3>出力例</h3>
-<pre><code>##  [1] 1 4 3 4 5 2 1 4 3 5 5 3 3 1 1 3 1 1 5 4</code></pre>
+<pre><code>##  [1] 88 54 29 28 20 53 27  2 97  5</code></pre>
 </div>
 <div id="tab2a" class="section level3 tab-pane">
+<h3>解答例1</h3>
+<pre class="r"><code>sample(1:100, 10)</code></pre>
+<pre><code>##  [1] 25 98 37 12 26 21 89 18 30  8</code></pre>
+<p>あるベクトルからランダムにサンプリングする<code>sample</code>関数には、第二引数(<code>size=</code>)でサンプリング数を指定できます。</p>
+<p>なお<code>sample</code>関数はデフォルトでは一度サンプリングした要素は再利用しませんので、この場合出力で同一の値が含まれることはありません。そのため、第一引数(<code>x=</code>)を超える第二引数を指定(たとえば<code>sample(1:2,4)</code>など)とするとエラーが返ってきます。</p>
+</div>
+</div>
+<div id="3-3" class="section level2 tab-content">
+<h2>問題(3) 一定の範囲の整数からランダムに数値ベクトルを生成3</h2>
+<p>以下のような、1から5までの整数からランダムに20個取得した数値ベクトルを生成してください。</p>
+<ul class="nav nav-tabs">
+<li class="active">
+<a href="#tab3" data-toggle="tab">出力例</a>
+</li>
+<li role="presentation">
+<a href="#tab3a" data-toggle="tab">解答例1</a>
+</li>
+</ul>
+<div id="tab3" class="section level3 tab-pane active">
+<h3>出力例</h3>
+<pre><code>##  [1] 3 3 1 5 4 5 3 4 2 5 4 2 1 1 1 4 3 4 4 4</code></pre>
+</div>
+<div id="tab3a" class="section level3 tab-pane">
 <h3>解答例</h3>
 <pre class="r"><code>sample(1:5, 20, replace = TRUE)</code></pre>
-<pre><code>##  [1] 3 1 2 3 2 4 1 3 4 4 2 2 4 1 1 2 2 3 2 3</code></pre>
+<pre><code>##  [1] 1 1 2 2 1 3 3 4 2 1 5 1 2 1 1 2 4 5 5 1</code></pre>
 <p>第一引数(<code>x=</code>)にもととなる値(orベクトル)を指定し、第2引数でサンプリングする回数を指定します。<code>replace=</code>引数は「持ってくる値を繰り返し使っていいか?」を指定し、<code>TRUE</code>なら再利用します。</p>
 <p>今回の問題は「1から5の整数」で「20個」とあるので、このようなコードとなります。</p>
 </div>

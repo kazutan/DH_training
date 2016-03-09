@@ -43,9 +43,8 @@ sample(6)
 sample(9.5)
 ```
 
-
 ## 問題(2) 一定の範囲の整数からランダムに数値ベクトルを生成2 {.tab-content}
-以下のような、1から5までの整数からランダムに20個取得した数値ベクトルを生成してください。
+1から100までの整数からランダムに10個取得した数値ベクトルを生成してください。
 
 <ul class="nav nav-tabs">
   <li class="active">
@@ -59,10 +58,38 @@ sample(9.5)
 ### 出力例 {#tab2 .tab-pane .active}
 
 ```{r echo=FALSE}
+sample(1:100, 10)
+```
+
+### 解答例1 {#tab2a .tab-pane}
+
+```{r}
+sample(1:100, 10)
+```
+
+あるベクトルからランダムにサンプリングする`sample`関数には、第二引数(`size=`)でサンプリング数を指定できます。
+
+なお`sample`関数はデフォルトでは一度サンプリングした要素は再利用しませんので、この場合出力で同一の値が含まれることはありません。そのため、第一引数(`x=`)を超える第二引数を指定(たとえば`sample(1:2,4)`など)とするとエラーが返ってきます。
+
+## 問題(3) 一定の範囲の整数からランダムに数値ベクトルを生成3 {.tab-content}
+以下のような、1から5までの整数からランダムに20個取得した数値ベクトルを生成してください。
+
+<ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#tab3" data-toggle="tab">出力例</a>
+  </li>
+  <li role="presentation">
+  <a href="#tab3a" data-toggle="tab">解答例1</a>
+  </li>
+</ul>
+
+### 出力例 {#tab3 .tab-pane .active}
+
+```{r echo=FALSE}
 sample(1:5, 20, replace = TRUE)
 ```
 
-### 解答例 {#tab2a .tab-pane}
+### 解答例 {#tab3a .tab-pane}
 
 ```{r}
 sample(1:5, 20, replace = TRUE)
